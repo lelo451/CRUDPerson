@@ -1,0 +1,22 @@
+<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+  <div class='container-fluid'>
+    <a class='navbar-brand'>Person CRUD</a>
+
+    <div id='navbarNav' class='collapse navbar-collapse'>
+      <ul class='navbar-nav ms-auto'>
+        <li class='nav-item'>
+          <a class='nav-link' routerLinkActive='active' routerLink='/people-list'>
+            <i class="fas fa-user"></i> Listar Pessoas
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' routerLinkActive='active' routerLink='/add-people'>
+            <i class="fas fa-user-plus"></i> Adicionar Pessoa
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

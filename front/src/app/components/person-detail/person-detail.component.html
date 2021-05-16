@@ -1,0 +1,45 @@
+<div class='row justify-content-center mt-5'>
+  <div class='col-md-4'>
+    <form [formGroup]='updateForm' (ngSubmit)='onUpdate()'>
+      <div class='mb-3 input-group'>
+        <span class='input-group-text' id='nome-icon'><i class="far fa-user"></i></span>
+        <input class='form-control' type='text' formControlName='nome'
+               required placeholder="Nome" aria-label="Nome" aria-describedby="nome-icon"
+               [minLength]='3'>
+      </div>
+      <div class='mb-3'>
+        <po-datepicker formControlName='dataNascimento' p-placeholder='dd/mm/yyyy'
+                       p-required='true'></po-datepicker>
+      </div>
+      <div class='mb-3 input-group'>
+        <span class='input-group-text' id='endereco-icon'><i class="far fa-address-book"></i></span>
+        <input class='form-control' type='text' formControlName='endereco' required placeholder="Endereço" aria-label="Endereço" aria-describedby="endereco-icon">
+      </div>
+      <div class='mb-3 input-group'>
+        <span class='input-group-text' id='cpf-icon'><i class="far fa-id-card"></i></span>
+        <input class='form-control' type='text' formControlName='cpf' required placeholder="CPF"
+               aria-label="CPF" aria-describedby="cpf-icon" [ngClass]="isCPFValid(updateForm.value['cpf'])"
+               mask='CPF_CNPJ' [maxLength]='14'>
+        <span class='invalid-feedback' [hidden]='cpfMsg'>CPF inválido</span>
+      </div>
+      <div class='mb-3 input-group'>
+        <span class='input-group-text' id='fone-icon'><i class="fas fa-phone"></i></span>
+        <input class='form-control' type='tel' formControlName='fone' required placeholder="Fone"
+               aria-label="Fone" aria-describedby="fone-icon" mask="(00) 0000-0000||(00) 0 0000-0000">
+      </div>
+      <div class='mb-3 input-group'>
+        <span class='input-group-text' id='email-icon'><i class="far fa-envelope"></i></span>
+        <input class='form-control' type='email' formControlName='email' required placeholder="Email"
+               aria-label="Email" aria-describedby="email-icon">
+      </div>
+      <div class='mb-3 input-group'>
+        <span class='input-group-text' id='obs-icon'><i class="far fa-sticky-note"></i></span>
+        <input class='form-control' type='text' formControlName='obs' placeholder="OBS" aria-label="OBS" aria-describedby="obs-icon">
+      </div>
+      <div class='d-grid gap-2 d-md-flex justify-content-center'>
+        <a class="btn btn-secondary" type='button' routerLink='/people-list'><i class="fas fa-long-arrow-alt-left"></i> Voltar</a>
+        <button class='btn btn-primary' type='submit'><i class="fas fa-sync"></i> Atualizar</button>
+      </div>
+    </form>
+  </div>
+</div>
